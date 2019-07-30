@@ -1,1 +1,3 @@
 # AWSappserver
+
+requires pymysql
