@@ -9,7 +9,7 @@
 = Database Connection =
 =======================
 
-;ip: 10.0.0.37
+;ip: 10.0.1.50
 ;user: josh
 ;password: root
 ;dbname: awsbooking
