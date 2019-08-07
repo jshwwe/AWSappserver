@@ -219,7 +219,7 @@ class socketlistener:
             return 2
 
 def extractconfig(file):
-    f = open("config.txt", "r")
+    f = open(file, "r")
     itemlist = []
     for line in f:
         if line[0] == ";":
