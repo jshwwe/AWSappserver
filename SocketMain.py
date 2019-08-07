@@ -14,7 +14,7 @@ print("==================================")
 
 # opensocket = socketlistener("", int(port), int(users), dbhost, dbuser, dbpass, dbname)
 
-config = extractconfig("config.txt")
+config = extractconfig("/var/AWSappserver/config.txt")
 opensocket = socketlistener("", int(config[0]), int(config[1]), config[2], config[3], config[4], config[5])
 
 print("\n* App server is up and running! *")
