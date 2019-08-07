@@ -19,6 +19,7 @@ class socketlistener:
 
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             self.socket.bind((self.host, self.port))
 
         except socket.error as msg:
