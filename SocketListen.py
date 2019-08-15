@@ -55,12 +55,22 @@ class socketlistener:
 
         #Different types of queries
         if data_array[0] == 'register':
-            sqlresult = self.registerquery(data_array[1], data_array[2], data_array[3], data_array[4])
-            conn.sendall(str(sqlresult).encode('utf-8'))
+            try:
+                sqlresult = self.registerquery(data_array[1], data_array[2], data_array[3], data_array[4])
+                conn.sendall(str(sqlresult).encode('utf-8'))
+            except Exception as e:
+                print("=x Inappropirate request received x=")
+                print(e)
+                return 2
 
         elif data_array[0] == 'login':
-            sqlresult = self.loginquery(data_array[1], data_array[2])
-            conn.sendall(str(sqlresult).encode('utf-8'))
+            try:
+                sqlresult = self.loginquery(data_array[1], data_array[2])
+                conn.sendall(str(sqlresult).encode('utf-8'))
+            except Exception as e:
+                print("=x Inappropirate request received x=")
+                print(e)
+                return 2
 
         elif data_array[0] == 'book':
             sqlresult = self.bookquery(data_array[1], data_array[2], data_array[3], data_array[4], data_array[5])
